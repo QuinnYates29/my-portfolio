@@ -27,7 +27,7 @@ function App() {
     <div className="min-h-screen bg-[#121212] text-zinc-400 font-sans p-4 md:p-8 selection:bg-sae-orange/30">
       
       {/* Top Navigation Bar - 3 Column Layout */}
-      <nav className="w-full max-w-[1440px] mx-auto grid grid-cols-3 items-start mb-8 px-12 pt-4 pb-10">
+      <nav className="w-full max-w-[1440px] mx-auto grid grid-cols-3 items-start mb-8 px-12 pb-16">
         {/* Column 1: Left */}
         <div className="flex justify-start">
           {/* Future slot for personal logo or version tag */}
@@ -66,7 +66,7 @@ function App() {
           {/* Photo Container */}
           <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-10">
             <img 
-              src="./quinnyates.png"
+              src="./quinnyates.jpg"
               alt="Quinn Yates" 
               className="w-32 h-32 rounded-full border-4 border-[#121212] object-cover shadow-2xl" 
             />
@@ -74,7 +74,7 @@ function App() {
 
           {/* Name & Title */}
           <div className="mt-4">
-            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-1 uppercase">
+            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-1">
               Quinn Yates
             </h1>
             <p className="text-sae-orange font-bold tracking-[0.3em] uppercase text-xs md:text-sm mt-2">
@@ -103,27 +103,42 @@ function App() {
                 <UserIcon className="w-5 h-5 text-sae-orange" /> About Me
               </h2>
               <p className="leading-relaxed text-zinc-400">
-                CS student at RIT with a focus on embedded systems. I spend my time optimizing 
-                CAN bus protocols and writing C++ firmware for the Formula SAE electric vehicle.
+                Hello! I am a CS student at RIT with strong skills across various technologies as well as embedded experience through RIT Racing. 
+                I am seeking a summer 2026 Co-op in software or embedded systems.
               </p>
             </section>
 
+            {/* EXPERIENCE */}
             <section className="mb-12">
-              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <BriefcaseIcon className="w-5 h-5 text-sae-orange" /> Experience
               </h2>
-              <div className="space-y-8">
-                <div className="relative pl-6 border-l border-zinc-800">
-                  <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
-                  <p className="text-xs text-zinc-500 font-bold uppercase">2024 - Present</p>
-                  <h3 className="text-white font-bold mt-1">Lead Firmware Engineer</h3>
-                  <p className="text-sm text-sae-orange font-medium">Formula SAE Team</p>
+
+              <div className="space-y-4">
+                {/*Electronics Member*/}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                    <p className="text-xs text-zinc-500 font-bold uppercase">2024 - Present</p>
+                    <h3 className="text-white font-bold mt-1">Electronics Member</h3>
+                    <p className="text-sm text-sae-orange font-medium">Formula SAE Team</p>
+                  </div>
+                </div>
+
+                {/*Volunteer Developer*/}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                    <p className="text-xs text-zinc-500 font-bold uppercase">2023-2024</p>
+                    <h3 className="text-white font-bold mt-1">Volunteer Developer</h3>
+                    <p className="text-sm text-sae-orange font-medium">Global Fishing Watch</p>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section>
-              <h2 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Tech Stack</h2>
+            <section className="mb-12">
+              <h2 className="text-white font-bold uppercase tracking-widest text-md mb-6">Tech Stack</h2>
               <div className="space-y-4">
                 {['C++', 'Python', 'React', 'Embedded C'].map(skill => (
                   <div key={skill}>
@@ -136,6 +151,33 @@ function App() {
                   </div>
                 ))}
               </div>
+            </section>
+            
+            {/* LEADERSHIP EXPERIENCE */}
+            <section>
+              <h2 className="text-white font-bold uppercase tracking-widest text-md mb-6">Leadership</h2>
+              <div className="space-y-4">
+              {/* SYSTEMS ADMIN - LK */}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                      <p className="text-xs text-zinc-500 font-bold uppercase">2024 - 2025</p>
+                      <h3 className="text-white font-bold mt-1">Systems Administrator</h3>
+                      <p className="text-sm text-sae-orange font-medium">Sigma Chi LK Fraternity</p>
+                  </div>
+                </div>
+
+                {/* Tribune - LK */}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                    <p className="text-xs text-zinc-500 font-bold uppercase">2024 - 2025</p>
+                    <h3 className="text-white font-bold mt-1">Alumni Relations Chairman</h3>
+                    <p className="text-sm text-sae-orange font-medium">Sigma Chi LK Fraternity</p>
+                  </div>
+                </div>
+              </div>
+
             </section>
           </aside>
 
