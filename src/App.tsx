@@ -220,8 +220,61 @@ function App() {
             <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
               <CpuChipIcon className="w-6 h-6 text-sae-orange" /> Featured Projects
             </h2>
+
+            {/* THE PROJECT CARD CONTAINER */}
+            <div className="bg-[#121212] border border-zinc-800/50 rounded-2xl p-8 mb-8 flex flex-col hover:border-sae-orange/50 transition-all">
+
+              {/* NEW INNER GRID: This is the logic you need. We define a new 2-column rule for laptops. */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mb-8">
+                
+                {/* 1. TEXT CONTAINER (Left Side on Laptop, Top on Mobile) */}
+                <div className="flex flex-col h-full justify-start">
+                  <div>
+                    <h3 className="text-2xl font-black text-white mb-2 uppercase tracking-tight">
+                      Telemetry Dashboard
+                    </h3>
+                    <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
+                      React-based real-time visualization of vehicle sensors over a radio link. 
+                      Features custom WebSocket-driven state management and dynamic chart rendering data. 
+                      Scalable for different sensor arrays.
+                    </p>
+                  </div>
+                  
+                  {/* Code Tags (Flows inside the text container) */}
+                  <div className="flex flex-wrap gap-2 mb-2 lg:mb-0">
+                    {['REACT', 'TYPESCRIPT', 'WEBSOCKETS', 'VITE'].map(t => (
+                      <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 uppercase tracking-tighter">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 2. IMAGE CONTAINER (Right Side on Laptop, Bottom on Mobile) */}
+                {/* We use aspect-video to force a dashboard ratio, even if the image changes. */}
+                <div className="aspect-video bg-[#18181b] border border-zinc-800 rounded-xl overflow-hidden shadow-inner flex justify-center">
+                  <img 
+                    src="/images/telemetry-graph.png" 
+                    alt="Telemetry Graph Mockup" 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+
+              </div> {/* End Inner Grid */}
+
+              {/* FULL-WIDTH BUTTON (Stays outside the interior grid) */}
+              <a 
+                href="https://github.com..." 
+                target="_blank" 
+                rel="noreferrer"
+                className="w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-3 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all flex items-center justify-center gap-2"
+              >
+                View Project <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+              </a>
+
+            </div> {/* End Card */}
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
               {projects.map((project, index) => (
                 <div key={index} className="bg-[#121212] border border-zinc-800/50 p-6 rounded-2xl group hover:border-sae-orange/50 transition-all flex flex-col h-full">
                   <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
