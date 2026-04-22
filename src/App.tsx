@@ -5,7 +5,9 @@ import {
   UserIcon,
   EnvelopeIcon,
   GlobeAltIcon,
-  ArrowTopRightOnSquareIcon
+  ArrowTopRightOnSquareIcon,
+  RectangleStackIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline';
 import { projects } from './projects';
 
@@ -26,43 +28,64 @@ function App() {
   return (
     <div className="min-h-screen bg-[#121212] text-zinc-400 font-sans p-4 md:p-8 selection:bg-sae-orange/30">
       
-      {/* Top Navigation Bar */}
-      <nav className="max-w-7xl mx-auto flex justify-between items-center mb-8 px-4">
-        <div className="flex gap-6 items-center">
-          <a href="https://github.com/QuinnYates29" target="_blank"><GithubIcon className="w-5 h-5 hover:text-white transition-colors" /></a>
-          <a href="https://linkedin.com/in/quinnyates" target="_blank"><LinkedinIcon className="w-5 h-5 hover:text-white transition-colors" /></a>
+      {/* Top Navigation Bar - 3 Column Layout */}
+      <nav className="w-full max-w-[1440px] mx-auto grid grid-cols-3 items-start mb-8 px-12 pb-16">
+        {/* Column 1: Left */}
+        <div className="flex justify-start">
+          {/* Future slot for personal logo or version tag */}
+        </div>
+
+        {/* Column 2: Center (Status Indicator) */}
+        <div className="flex justify-center">
+          <div className="flex items-center gap-2 px-3 py-1 bg-zinc-800/50 rounded-full border border-zinc-700/50">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sae-orange opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-sae-orange"></span>
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">
+              Seeking 2026 Co-Op
+            </span>
+          </div>
+        </div>
+
+        {/* Column 3: Right (Socials) */}
+        <div className="flex justify-end gap-6">
+          <a href="https://github.com/QuinnYates29" target="_blank" rel="noreferrer">
+            <GithubIcon className="w-5 h-5 hover:text-white transition-colors" />
+          </a>
+          <a href="https://linkedin.com/in/quinnyates" target="_blank" rel="noreferrer">
+            <LinkedinIcon className="w-5 h-5 hover:text-white transition-colors" />
+          </a>
         </div>
       </nav>
 
       {/* MAIN INNER CONTAINER (#222222) */}
-      <main className="max-w-7xl mx-auto bg-[#222222] rounded-[2.5rem] shadow-2xl border border-zinc-800/50 mt-20">
+      <main className="max-w-[1440px] mx-auto bg-[#222222] rounded-[2.5rem] shadow-2xl border border-zinc-800/50 mt-10">
   
         {/* Header / Identity Section */}
-        {/* Changed 'pt-16' to 'pt-24' to account for the photo taking up space inside now */}
-        <header className="relative pt-20 pb-12 text-center border-b border-zinc-800/50">
+        <header className="relative pt-16 pb-8 text-center border-b border-zinc-800/50">
   
           {/* Photo Container */}
-          {/* w-32 is 128px. -top-16 pulls it up exactly halfway (64px). */}
           <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-10">
             <img 
-              src="/quinnyates.jpg" 
+              src="./quinnyates.jpg"
               alt="Quinn Yates" 
               className="w-32 h-32 rounded-full border-4 border-[#121212] object-cover shadow-2xl" 
             />
           </div>
 
           {/* Name & Title */}
-          <div className="mt-4"> {/* Added extra top margin to prevent name overlap */}
-            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase mb-1">
-              QUINN YATES
+          <div className="mt-4">
+            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-1">
+              Quinn Yates
             </h1>
-            <p className="text-sae-orange font-bold tracking-[0.3em] uppercase text-xs md:text-sm">
-              Formula SAE Engineer / CS Major
+            <p className="text-sae-orange font-bold tracking-[0.3em] uppercase text-xs md:text-sm mt-2">
+              CS Major / CSEC Minor
             </p>
           </div>
           
           {/* Contact Bar */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 text-xs md:text-sm text-zinc-500 px-4">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 text-xs md:text-sm text-zinc-500 px-4">
             <span className="flex items-center gap-2">
               <EnvelopeIcon className="w-4 h-4 text-sae-orange" /> quinnyates3229@gmail.com
             </span>
@@ -82,39 +105,113 @@ function App() {
                 <UserIcon className="w-5 h-5 text-sae-orange" /> About Me
               </h2>
               <p className="leading-relaxed text-zinc-400">
-                CS student at RIT with a focus on embedded systems. I spend my time optimizing 
-                CAN bus protocols and writing C++ firmware for the Formula SAE electric vehicle.
+                Hello! I am a CS student at RIT with strong skills across various technologies as well as embedded experience through RIT Racing. 
+                I am seeking a summer 2026 Co-op in software or embedded systems.
               </p>
             </section>
 
+            {/* EXPERIENCE */}
             <section className="mb-12">
-              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <BriefcaseIcon className="w-5 h-5 text-sae-orange" /> Experience
               </h2>
-              <div className="space-y-8">
-                <div className="relative pl-6 border-l border-zinc-800">
-                  <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
-                  <p className="text-xs text-zinc-500 font-bold uppercase">2024 - Present</p>
-                  <h3 className="text-white font-bold mt-1">Lead Firmware Engineer</h3>
-                  <p className="text-sm text-sae-orange font-medium">Formula SAE Team</p>
+
+              <div className="space-y-4">
+                {/*Electronics Member*/}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                    <p className="text-xs text-zinc-500 font-bold uppercase">2024 - Present</p>
+                    <h3 className="text-white font-bold mt-1">Electronics Member</h3>
+                    <p className="text-sm text-sae-orange font-medium">Formula SAE Team</p>
+                  </div>
+                </div>
+
+                {/*Volunteer Developer*/}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                    <p className="text-xs text-zinc-500 font-bold uppercase">2023-2024</p>
+                    <h3 className="text-white font-bold mt-1">Volunteer Developer</h3>
+                    <p className="text-sm text-sae-orange font-medium">Global Fishing Watch</p>
+                  </div>
                 </div>
               </div>
             </section>
 
-            <section>
-              <h2 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Tech Stack</h2>
-              <div className="space-y-4">
-                {['C++', 'Python', 'React', 'Embedded C'].map(skill => (
-                  <div key={skill}>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-white font-medium">{skill}</span>
-                    </div>
-                    <div className="h-1 bg-zinc-800 rounded-full">
-                      <div className="h-full bg-sae-orange rounded-full" style={{ width: skill === 'C++' ? '95%' : '80%' }} />
-                    </div>
+            {/* TECHNICAL SKILLS SECTION */}
+            <section className="mb-12">
+              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+                <RectangleStackIcon className="w-5 h-5 text-sae-orange" /> Skills
+              </h2>
+
+              <div className="grid grid-cols-1 gap-6">
+                {/* Category: Languages */}
+                <div>
+                  <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-tighter mb-3">Core Languages</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['C++', 'Embedded C', 'Python', 'Java', 'TypeScript', "C"].map(skill => (
+                      <span key={skill} className="px-2 py-1 bg-zinc-800/50 border border-zinc-700/50 rounded text-xs text-zinc-300">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Category: Tools & OS */}
+                <div>
+                  <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-tighter mb-3">Tools & Environment</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Linux', 'Vim', 'Git', 'Agile', 'Spring Boot', "JacCoCo", "SonarQube", "Valgrind"].map(tool => (
+                      <span key={tool} className="px-2 py-1 bg-sae-orange/5 border border-sae-orange/20 rounded text-xs text-sae-orange">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Category: Relevant Coursework */}
+                <div>
+                  <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-tighter mb-3">Academic Foundation</h3>
+                  <ul className="grid grid-cols-2 gap-y-1 text-[11px] text-zinc-400">
+                    <li>• Algorithms</li>
+                    <li>• Discrete Math</li>
+                    <li>• Software Eng</li>
+                    <li>• CS Theory</li>
+                    <li>• Linear Algebra</li>
+                    <li>• Mechanics of Programming</li>
+                  </ul>
+                </div>
               </div>
+            </section>
+            
+            {/* LEADERSHIP EXPERIENCE */}
+            <section>
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
+                <AcademicCapIcon className="w-5 h-5 text-sae-orange" /> Leadership
+              </h2>
+              <div className="space-y-4">
+              {/* SYSTEMS ADMIN - LK */}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                      <p className="text-xs text-zinc-500 font-bold uppercase">2024 - 2025</p>
+                      <h3 className="text-white font-bold mt-1">Systems Administrator</h3>
+                      <p className="text-sm text-sae-orange font-medium">Sigma Chi LK Fraternity</p>
+                  </div>
+                </div>
+
+                {/* Tribune - LK */}
+                <div className="">
+                  <div className="relative pl-6 border-l border-zinc-800">
+                    <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                    <p className="text-xs text-zinc-500 font-bold uppercase">2024 - 2025</p>
+                    <h3 className="text-white font-bold mt-1">Alumni Relations Chairman</h3>
+                    <p className="text-sm text-sae-orange font-medium">Sigma Chi LK Fraternity</p>
+                  </div>
+                </div>
+              </div>
+
             </section>
           </aside>
 
@@ -141,6 +238,7 @@ function App() {
                   <a 
                     href={project.github} 
                     target="_blank"
+                    rel="noreferrer"
                     className="w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-2 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all flex items-center justify-center gap-2"
                   >
                     View Project <ArrowTopRightOnSquareIcon className="w-4 h-4" />
@@ -149,11 +247,10 @@ function App() {
               ))}
             </div>
           </section>
-
         </div>
       </main>
 
-      <footer className="mt-12 text-center text-zinc-600 text-xs tracking-widest uppercase">
+      <footer className="mt-12 text-center text-zinc-600 text-xs tracking-widest uppercase pb-8">
         © 2026 Quinn Yates — Built with React & Tailwind v4
       </footer>
     </div>
