@@ -1,121 +1,163 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { 
+  CodeBracketIcon, 
+  CpuChipIcon, 
+  BriefcaseIcon,
+  UserIcon,
+  EnvelopeIcon,
+  GlobeAltIcon,
+  ArrowTopRightOnSquareIcon
+} from '@heroicons/react/24/outline';
+import { projects } from './projects';
+
+// Custom Brand Icons
+const GithubIcon = ({ className }: { className?: string }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+  </svg>
+);
+
+const LinkedinIcon = ({ className }: { className?: string }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+  </svg>
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div className="min-h-screen bg-[#121212] text-zinc-400 font-sans p-4 md:p-8 selection:bg-sae-orange/30">
+      
+      {/* Top Navigation Bar */}
+      <nav className="max-w-7xl mx-auto flex items-center mb-8 px-4">
+        <div className="flex gap-6 items-center">
+          <a href="https://github.com/QuinnYates29" target="_blank"><GithubIcon className="w-5 h-5 hover:text-white transition-colors" /></a>
+          <a href="https://linkedin.com/in/quinnyates" target="_blank"><LinkedinIcon className="w-5 h-5 hover:text-white transition-colors" /></a>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </nav>
 
-      <div className="ticks"></div>
+      {/* MAIN INNER CONTAINER (#222222) */}
+      <main className="max-w-7xl mx-auto bg-[#222222] rounded-[2.5rem] shadow-2xl border border-zinc-800/50 mt-20">
+  
+        {/* Header / Identity Section */}
+        {/* Changed 'pt-16' to 'pt-24' to account for the photo taking up space inside now */}
+        <header className="relative pt-20 pb-12 text-center border-b border-zinc-800/50">
+  
+          {/* Photo Container */}
+          {/* w-32 is 128px. -top-16 pulls it up exactly halfway (64px). */}
+          <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-10">
+            <img 
+              src="/quinnyates.jpg" 
+              alt="Quinn Yates" 
+              className="w-32 h-32 rounded-full border-4 border-[#121212] object-cover shadow-2xl" 
+            />
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          {/* Name & Title */}
+          <div className="mt-4"> {/* Added extra top margin to prevent name overlap */}
+            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase mb-1">
+              QUINN YATES
+            </h1>
+            <p className="text-sae-orange font-bold tracking-[0.3em] uppercase text-xs md:text-sm">
+              Formula SAE Engineer / CS Major
+            </p>
+          </div>
+          
+          {/* Contact Bar */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 text-xs md:text-sm text-zinc-500 px-4">
+            <span className="flex items-center gap-2">
+              <EnvelopeIcon className="w-4 h-4 text-sae-orange" /> quinnyates3229@gmail.com
+            </span>
+            <span className="flex items-center gap-2">
+              <GlobeAltIcon className="w-4 h-4 text-sae-orange" /> Rochester, NY
+            </span>
+          </div>
+        </header>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        <div className="grid grid-cols-1 lg:grid-cols-12">
+          
+          {/* LEFT COLUMN: ABOUT & EXPERIENCE (4 cols) */}
+          <aside className="lg:col-span-4 p-8 md:p-12 border-r border-zinc-800/50">
+            
+            <section className="mb-12">
+              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+                <UserIcon className="w-5 h-5 text-sae-orange" /> About Me
+              </h2>
+              <p className="leading-relaxed text-zinc-400">
+                CS student at RIT with a focus on embedded systems. I spend my time optimizing 
+                CAN bus protocols and writing C++ firmware for the Formula SAE electric vehicle.
+              </p>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+                <BriefcaseIcon className="w-5 h-5 text-sae-orange" /> Experience
+              </h2>
+              <div className="space-y-8">
+                <div className="relative pl-6 border-l border-zinc-800">
+                  <div className="absolute w-2 h-2 bg-sae-orange rounded-full -left-[4.5px] top-2" />
+                  <p className="text-xs text-zinc-500 font-bold uppercase">2024 - Present</p>
+                  <h3 className="text-white font-bold mt-1">Lead Firmware Engineer</h3>
+                  <p className="text-sm text-sae-orange font-medium">Formula SAE Team</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Tech Stack</h2>
+              <div className="space-y-4">
+                {['C++', 'Python', 'React', 'Embedded C'].map(skill => (
+                  <div key={skill}>
+                    <div className="flex justify-between text-xs mb-1">
+                      <span className="text-white font-medium">{skill}</span>
+                    </div>
+                    <div className="h-1 bg-zinc-800 rounded-full">
+                      <div className="h-full bg-sae-orange rounded-full" style={{ width: skill === 'C++' ? '95%' : '80%' }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </aside>
+
+          {/* RIGHT COLUMN: PROJECTS (8 cols) */}
+          <section className="lg:col-span-8 p-8 md:p-12 bg-black/20">
+            <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
+              <CpuChipIcon className="w-6 h-6 text-sae-orange" /> Featured Projects
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {projects.map((project, index) => (
+                <div key={index} className="bg-[#121212] border border-zinc-800/50 p-6 rounded-2xl group hover:border-sae-orange/50 transition-all flex flex-col h-full">
+                  <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                  <p className="text-sm text-zinc-500 mb-6 flex-grow">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tech.map(t => (
+                      <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-400 rounded border border-zinc-800 uppercase tracking-tighter">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a 
+                    href={project.github} 
+                    target="_blank"
+                    className="w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-2 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all flex items-center justify-center gap-2"
+                  >
+                    View Project <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <footer className="mt-12 text-center text-zinc-600 text-xs tracking-widest uppercase">
+        © 2026 Quinn Yates — Built with React & Tailwind v4
+      </footer>
+    </div>
+  );
 }
 
-export default App
+export default App;
