@@ -5,7 +5,9 @@ import {
   UserIcon,
   EnvelopeIcon,
   GlobeAltIcon,
-  ArrowTopRightOnSquareIcon
+  ArrowTopRightOnSquareIcon,
+  RectangleStackIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline';
 import { projects } from './projects';
 
@@ -41,7 +43,7 @@ function App() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-sae-orange"></span>
             </span>
             <span className="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">
-              Developing CAN Bus Firmware
+              Seeking 2026 Co-Op
             </span>
           </div>
         </div>
@@ -137,25 +139,57 @@ function App() {
               </div>
             </section>
 
+            {/* TECHNICAL SKILLS SECTION */}
             <section className="mb-12">
-              <h2 className="text-white font-bold uppercase tracking-widest text-md mb-6">Tech Stack</h2>
-              <div className="space-y-4">
-                {['C++', 'Python', 'React', 'Embedded C'].map(skill => (
-                  <div key={skill}>
-                    <div className="flex justify-between text-xs mb-1">
-                      <span className="text-white font-medium">{skill}</span>
-                    </div>
-                    <div className="h-1 bg-zinc-800 rounded-full">
-                      <div className="h-full bg-sae-orange rounded-full" style={{ width: skill === 'C++' ? '95%' : '80%' }} />
-                    </div>
+              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+                <RectangleStackIcon className="w-5 h-5 text-sae-orange" /> Skills
+              </h2>
+
+              <div className="grid grid-cols-1 gap-6">
+                {/* Category: Languages */}
+                <div>
+                  <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-tighter mb-3">Core Languages</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['C++', 'Embedded C', 'Python', 'Java', 'TypeScript', "C"].map(skill => (
+                      <span key={skill} className="px-2 py-1 bg-zinc-800/50 border border-zinc-700/50 rounded text-xs text-zinc-300">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* Category: Tools & OS */}
+                <div>
+                  <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-tighter mb-3">Tools & Environment</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Linux', 'Vim', 'Git', 'Agile', 'Spring Boot', "JacCoCo", "SonarQube", "Valgrind"].map(tool => (
+                      <span key={tool} className="px-2 py-1 bg-sae-orange/5 border border-sae-orange/20 rounded text-xs text-sae-orange">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Category: Relevant Coursework */}
+                <div>
+                  <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-tighter mb-3">Academic Foundation</h3>
+                  <ul className="grid grid-cols-2 gap-y-1 text-[11px] text-zinc-400">
+                    <li>• Algorithms</li>
+                    <li>• Discrete Math</li>
+                    <li>• Software Eng</li>
+                    <li>• CS Theory</li>
+                    <li>• Linear Algebra</li>
+                    <li>• Mechanics of Programming</li>
+                  </ul>
+                </div>
               </div>
             </section>
             
             {/* LEADERSHIP EXPERIENCE */}
             <section>
-              <h2 className="text-white font-bold uppercase tracking-widest text-md mb-6">Leadership</h2>
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
+                <AcademicCapIcon className="w-5 h-5 text-sae-orange" /> Leadership
+              </h2>
               <div className="space-y-4">
               {/* SYSTEMS ADMIN - LK */}
                 <div className="">
