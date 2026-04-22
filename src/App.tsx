@@ -66,7 +66,7 @@ function App() {
           {/* Photo Container */}
           <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-10">
             <img 
-              src="/quinnyates.jpg" 
+              src="./quinnyates.png"
               alt="Quinn Yates" 
               className="w-32 h-32 rounded-full border-4 border-[#121212] object-cover shadow-2xl" 
             />
