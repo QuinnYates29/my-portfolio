@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
-/* If you are using Tailwind v4, that single import might be all you need. */
-/* If you are on v3, use the standard directives below: */
-
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-*/
+@theme {
+  /* This creates the 'sae-orange' utility class automatically */
+  --color-sae-orange: #ff6600;
+  
+  /* You can also define your fonts here if you want to keep it clean */
+  --font-sans: "Inter", "system-ui", "sans-serif";
+}
 
 :root {
-  /* Keep your custom orange color variable here so Tailwind can use it if needed */
-  --sae-orange: #ff5722; 
+  background-color: #121212;
 }
 
 body {
   margin: 0;
-  background-color: #121212; /* Match your App.tsx background */
+  background: #121212;
 }

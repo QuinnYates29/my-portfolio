@@ -26,23 +26,44 @@ function App() {
   return (
     <div className="min-h-screen bg-[#121212] text-zinc-400 font-sans p-4 md:p-8 selection:bg-sae-orange/30">
       
-      {/* Top Navigation Bar */}
-      <nav className="max-w-7xl mx-auto flex items-center mb-8 px-4">
-        <div className="flex gap-6 items-center">
-          <a href="https://github.com/QuinnYates29" target="_blank"><GithubIcon className="w-5 h-5 hover:text-white transition-colors" /></a>
-          <a href="https://linkedin.com/in/quinnyates" target="_blank"><LinkedinIcon className="w-5 h-5 hover:text-white transition-colors" /></a>
+      {/* Top Navigation Bar - 3 Column Layout */}
+      <nav className="w-full max-w-[1440px] mx-auto grid grid-cols-3 items-start mb-8 px-12 pt-4 pb-10">
+        {/* Column 1: Left */}
+        <div className="flex justify-start">
+          {/* Future slot for personal logo or version tag */}
+        </div>
+
+        {/* Column 2: Center (Status Indicator) */}
+        <div className="flex justify-center">
+          <div className="flex items-center gap-2 px-3 py-1 bg-zinc-800/50 rounded-full border border-zinc-700/50">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sae-orange opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-sae-orange"></span>
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">
+              Developing CAN Bus Firmware
+            </span>
+          </div>
+        </div>
+
+        {/* Column 3: Right (Socials) */}
+        <div className="flex justify-end gap-6">
+          <a href="https://github.com/QuinnYates29" target="_blank" rel="noreferrer">
+            <GithubIcon className="w-5 h-5 hover:text-white transition-colors" />
+          </a>
+          <a href="https://linkedin.com/in/quinnyates" target="_blank" rel="noreferrer">
+            <LinkedinIcon className="w-5 h-5 hover:text-white transition-colors" />
+          </a>
         </div>
       </nav>
 
       {/* MAIN INNER CONTAINER (#222222) */}
-      <main className="max-w-7xl mx-auto bg-[#222222] rounded-[2.5rem] shadow-2xl border border-zinc-800/50 mt-20">
+      <main className="max-w-[1440px] mx-auto bg-[#222222] rounded-[2.5rem] shadow-2xl border border-zinc-800/50 mt-10">
   
         {/* Header / Identity Section */}
-        {/* Changed 'pt-16' to 'pt-24' to account for the photo taking up space inside now */}
-        <header className="relative pt-20 pb-12 text-center border-b border-zinc-800/50">
+        <header className="relative pt-16 pb-8 text-center border-b border-zinc-800/50">
   
           {/* Photo Container */}
-          {/* w-32 is 128px. -top-16 pulls it up exactly halfway (64px). */}
           <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-10">
             <img 
               src="/quinnyates.jpg" 
@@ -52,17 +73,17 @@ function App() {
           </div>
 
           {/* Name & Title */}
-          <div className="mt-4"> {/* Added extra top margin to prevent name overlap */}
-            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight uppercase mb-1">
-              QUINN YATES
+          <div className="mt-4">
+            <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-1 uppercase">
+              Quinn Yates
             </h1>
-            <p className="text-sae-orange font-bold tracking-[0.3em] uppercase text-xs md:text-sm">
-              Formula SAE Engineer / CS Major
+            <p className="text-sae-orange font-bold tracking-[0.3em] uppercase text-xs md:text-sm mt-2">
+              CS Major / CSEC Minor
             </p>
           </div>
           
           {/* Contact Bar */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 text-xs md:text-sm text-zinc-500 px-4">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 text-xs md:text-sm text-zinc-500 px-4">
             <span className="flex items-center gap-2">
               <EnvelopeIcon className="w-4 h-4 text-sae-orange" /> quinnyates3229@gmail.com
             </span>
@@ -141,6 +162,7 @@ function App() {
                   <a 
                     href={project.github} 
                     target="_blank"
+                    rel="noreferrer"
                     className="w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-2 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all flex items-center justify-center gap-2"
                   >
                     View Project <ArrowTopRightOnSquareIcon className="w-4 h-4" />
@@ -149,11 +171,10 @@ function App() {
               ))}
             </div>
           </section>
-
         </div>
       </main>
 
-      <footer className="mt-12 text-center text-zinc-600 text-xs tracking-widest uppercase">
+      <footer className="mt-12 text-center text-zinc-600 text-xs tracking-widest uppercase pb-8">
         © 2026 Quinn Yates — Built with React & Tailwind v4
       </footer>
     </div>
