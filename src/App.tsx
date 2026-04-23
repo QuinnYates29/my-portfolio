@@ -101,7 +101,7 @@ function App() {
           <aside className="lg:col-span-4 p-8 md:p-12 border-r border-zinc-800/50">
             
             <section className="mb-12">
-              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <UserIcon className="w-5 h-5 text-sae-orange" /> About Me
               </h2>
               <p className="leading-relaxed text-zinc-400">
@@ -141,7 +141,7 @@ function App() {
 
             {/* TECHNICAL SKILLS SECTION */}
             <section className="mb-12">
-              <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-6">
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <RectangleStackIcon className="w-5 h-5 text-sae-orange" /> Skills
               </h2>
 
@@ -216,7 +216,7 @@ function App() {
           </aside>
 
           <section className="lg:col-span-8 p-8 md:p-12 bg-black/20">
-            <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
+            <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-8">
               <CpuChipIcon className="w-6 h-6 text-sae-orange" /> Featured Projects
             </h2>
 
@@ -238,11 +238,11 @@ function App() {
                       /* Large, 2 column project card */
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                         <div className="flex flex-col justify-start">
-                          <h3 className="text-2xl font-black text-white mb-2 uppercase tracking-tight">{project.title}</h3>
+                          <h3 className="text-2xl font-black text-white mb-2 tracking-tight">{project.title}</h3>
                           <p className="text-sm text-zinc-400 mb-6 leading-relaxed">{project.description}</p>
                           <div className="flex flex-wrap gap-2">
                             {project.tech.map(t => (
-                              <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 uppercase tracking-tighter">{t}</span>
+                              <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 tracking-tighter">{t}</span>
                             ))}
                           </div>
                         </div>
@@ -253,11 +253,11 @@ function App() {
                     ) : (
                       /* Smaller, 1 column project card */
                       <div className="flex flex-col h-full">
-                        <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-tight">{project.title}</h3>
+                        <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">{project.title}</h3>
                         <p className="text-sm text-zinc-400 mb-6 flex-grow">{project.description}</p>
                         <div className="flex flex-wrap gap-2 mt-auto">
                           {project.tech.map(t => (
-                            <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 uppercase tracking-tighter">{t}</span>
+                            <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 tracking-tighter">{t}</span>
                           ))}
                         </div>
                       </div>
