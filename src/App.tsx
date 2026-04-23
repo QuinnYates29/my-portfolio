@@ -253,11 +253,11 @@ function App() {
                     ) : (
                       /* Smaller, 1 column project card */
                       <div className="flex flex-col h-full">
-                        <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-tight">{project.title}</h3>
-                        <p className="text-xs text-zinc-500 mb-6 flex-grow">{project.description}</p>
+                        <h3 className="text-2xl font-bold text-white mb-2 uppercase tracking-tight">{project.title}</h3>
+                        <p className="text-sm text-zinc-400 mb-6 flex-grow">{project.description}</p>
                         <div className="flex flex-wrap gap-2 mt-auto">
                           {project.tech.map(t => (
-                            <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-400 rounded border border-zinc-800 uppercase tracking-tighter">{t}</span>
+                            <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 uppercase tracking-tighter">{t}</span>
                           ))}
                         </div>
                       </div>
