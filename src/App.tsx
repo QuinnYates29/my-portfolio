@@ -219,59 +219,65 @@ function App() {
             <h2 className="text-white font-bold uppercase tracking-widest text-sm flex items-center gap-2 mb-8">
               <CpuChipIcon className="w-6 h-6 text-sae-orange" /> Featured Projects
             </h2>
-            <div className="space-y-8">
-              {projects.map((project, index) => (
-                <div 
-                  key={index} 
-                  className="bg-[#121212] border border-zinc-800/50 rounded-2xl p-8 flex flex-col hover:border-sae-orange/50 transition-all group">
-                  {/* INNER GRID */}
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 mb-8">
-                    
-                    {/* TEXT CONTAINER */}
-                    <div className="flex flex-col h-full justify-between">
-                      <div>
-                        <h3 className="text-2xl font-bold text-white mb-2 tracking-tight group-hover:text-sae-orange transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-sm text-zinc-500 mb-6 leading-relaxed">
-                          {project.description}
-                        </p>
-                      </div>
-                      
-                      {/* Tech Tags */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map(t => (
-                          <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 uppercase tracking-tighter">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
 
-                    {/* IMAGE CONTAINER */}
-                    <div className="aspect-video bg-[#18181b] border border-zinc-800 rounded-xl overflow-hidden shadow-inner flex justify-center">
-                      <img 
-                        src={project.image || "/images/placeholder.png"} 
-                        alt={`${project.title} Preview`} 
-                        className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-500" 
-                      />
-                    </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {projects.map((project, index) => {
+                // If Image exists, then it is a full card
+                const hasImage = !!project.image;
 
-                  </div> {/* End Inner Grid */}
-
-                  {/* FULL-WIDTH BUTTON */}
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-3 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all flex items-center justify-center gap-2"
+                return (
+                  <div 
+                    key={index} 
+                    className={`
+                      bg-[#121212] border border-zinc-800/50 rounded-2xl p-8 hover:border-sae-orange/50 transition-all flex flex-col
+                      ${hasImage ? 'lg:col-span-2' : 'lg:col-span-1'}
+                    `}
                   >
-                    View Project <ArrowTopRightOnSquareIcon className="w-4 h-4" />
-                  </a>
+                    {hasImage ? (
+                      /* Large, 2 column project card */
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <div className="flex flex-col justify-start">
+                          <h3 className="text-2xl font-black text-white mb-2 uppercase tracking-tight">{project.title}</h3>
+                          <p className="text-sm text-zinc-400 mb-6 leading-relaxed">{project.description}</p>
+                          <div className="flex flex-wrap gap-2">
+                            {project.tech.map(t => (
+                              <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-300 rounded border border-zinc-800 uppercase tracking-tighter">{t}</span>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="aspect-video bg-[#18181b] border border-zinc-800 rounded-xl overflow-hidden shadow-inner">
+                          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                        </div>
+                      </div>
+                    ) : (
+                      /* Smaller, 1 column project card */
+                      <div className="flex flex-col h-full">
+                        <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-tight">{project.title}</h3>
+                        <p className="text-xs text-zinc-500 mb-6 flex-grow">{project.description}</p>
+                        <div className="flex flex-wrap gap-2 mt-auto">
+                          {project.tech.map(t => (
+                            <span key={t} className="text-[10px] px-2 py-1 bg-zinc-900 text-zinc-400 rounded border border-zinc-800 uppercase tracking-tighter">{t}</span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
 
-                </div>
-              ))}
+                    {/* Github Button (if exists) */}
+                    {project.github && (
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        className="mt-8 w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-3 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all"
+                      >
+                        View Project
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
             </div>
+            
           </section>
         </div>
       </main>

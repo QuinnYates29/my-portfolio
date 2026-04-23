@@ -1,4 +1,4 @@
-import schematicImg from "./assets/schematic_example.png";
+import schematicImg from "./assets/schematic_example3.png";
 
 export interface Project {
     title: string;
@@ -21,7 +21,6 @@ export interface Project {
       title: "ECU Data Logger",
       description: "High-speed C++ firmware for real-time CAN bus monitoring and SD card logging.",
       tech: ["C++", "CAN Bus", "Embedded"],
-      github: "https://github.com/QuinnYates29/ecu-logger"
     },
     {
       title: "Telemetry Dashboard",
