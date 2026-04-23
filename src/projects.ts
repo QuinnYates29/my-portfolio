@@ -1,4 +1,4 @@
-import schematicImg from "./assets/schematic_example.png";
+import schematicImg from "./assets/schematic_example3.png";
 
 export interface Project {
     title: string;
@@ -18,15 +18,32 @@ export interface Project {
       image: schematicImg
     },
     {
-      title: "ECU Data Logger",
-      description: "High-speed C++ firmware for real-time CAN bus monitoring and SD card logging.",
-      tech: ["C++", "CAN Bus", "Embedded"],
-      github: "https://github.com/QuinnYates29/ecu-logger"
+      title: "PCB Vibration Tester",
+      description: "ESP32-based automation platform designed for high-stress reliability testing of component assemblies within controlled environments. Features a custom hardware interface with display and I/O, allowing for specification of testing parameters. Reliably executes automated test cycles up to ~40G of acceleration.",
+      tech: ["C++", "ESP-32", "CAN Bus", "Embedded I/O"],
+      github: "https://github.com/QuinnYates29/Vibe-Thermal-Testing"
     },
     {
       title: "Telemetry Dashboard",
       description: "React-based real-time visualization of vehicle sensors over a radio link.",
       tech: ["React", "TypeScript", "WebSockets"],
       github: "https://github.com/QuinnYates29/telemetry-dash"
+    },
+    {
+      title: "Fundraising Website",
+      description: "and aodhoa doaihdoia doihd ioahoaidh oafh ao aofihfaoi foih oa o aoih ofih oiaf hoiaf hiof oia oif oiaf oiahfoih foahfo ljakbjgb",
+      tech: ["Angular", "TypeScript", "Spring Boot", "Java", "JaCoCo", "SonarQube"],
+      github: "gitpage",
+      image: "placeholder.png"
+    },
+    {
+      title: "Low-Power GPS Tracker",
+      description: "An open-source low-power platform developed to support sustainable fishing oversight and safety for small fishing boats. Contributed 150+ hours toward the software of a cost-optimized GPS tracking solution for over 1,000 small vessels. Features SOS systems and state management, enabling reliable long-term operation in remote environments.",
+      tech: ["Micropython", "GPS/GNSS", "State Management"]
+    },
+    {
+      title: "Wireless Telemetry System",
+      description: "Real-time data acquisition architecture developed to bridge vehicle CAN bus networks with long-range radio transmission. Engineered Python-based parsing software to decode raw CAN data into usable vehicle metrics while also implementing a C-based LoRa firmware for wireless transmission. The system serves as a developmental foundation for remote diagnostics, focused on low-latency data transfer and reliable communication in varying high-interference environments.",
+      tech: ["Python", "C", "LoRa (RF)", "CAN Bus", "Embedded Firmware", "Serial Interfacing"]
     }
   ];
