@@ -30,6 +30,13 @@ export interface Project {
       github: "https://github.com/QuinnYates29/telemetry-dash"
     },
     {
+      title: "Fundraising Website",
+      description: "and aodhoa doaihdoia doihd ioahoaidh oafh ao aofihfaoi foih oa o aoih ofih oiaf hoiaf hiof oia oif oiaf oiahfoih foahfo ljakbjgb",
+      tech: ["Angular", "TypeScript", "Spring Boot", "Java", "JaCoCo", "SonarQube"],
+      github: "gitpage",
+      image: "placeholder.png"
+    },
+    {
       title: "Low-Power GPS Tracker",
       description: "An open-source low-power platform developed to support sustainable fishing oversight and safety for small fishing boats. Contributed 150+ hours toward the software of a cost-optimized GPS tracking solution for over 1,000 small vessels. Features SOS systems and state management, enabling reliable long-term operation in remote environments.",
       tech: ["Micropython", "GPS/GNSS", "State Management"]
