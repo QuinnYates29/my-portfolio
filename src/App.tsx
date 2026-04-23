@@ -1,11 +1,9 @@
-import { 
-  CodeBracketIcon, 
+import {  
   CpuChipIcon, 
   BriefcaseIcon,
   UserIcon,
   EnvelopeIcon,
   GlobeAltIcon,
-  ArrowTopRightOnSquareIcon,
   RectangleStackIcon,
   AcademicCapIcon
 } from '@heroicons/react/24/outline';
