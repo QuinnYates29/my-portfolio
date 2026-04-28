@@ -35,6 +35,7 @@ export interface Project {
       1,000 small vessels. Features SOS systems and state management, enabling reliable long-term operation in remote environments.",
       tech: ["Micropython", "GPS/GNSS", "State Management", "Rapid Prototyping", "System Integration"]
     },
+    /*
     {
       title: "Fundraising Website",
       description: "and aodhoa doaihdoia doihd ioahoaidh oafh ao aofihfaoi foih oa o aoih ofih oiaf hoiaf hiof oia oif oiaf oiahfoih foahfo ljakbjgb",
@@ -42,6 +43,7 @@ export interface Project {
       github: "gitpage",
       image: "placeholder.png"
     },
+    */
     {
       title: "Wireless Telemetry System",
       description: "Real-time data acquisition architecture developed to bridge vehicle CAN bus networks with long-range \
