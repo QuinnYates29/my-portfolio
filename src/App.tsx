@@ -5,7 +5,8 @@ import {
   EnvelopeIcon,
   GlobeAltIcon,
   RectangleStackIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
+  RocketLaunchIcon
 } from '@heroicons/react/24/outline';
 import { projects } from './projects';
 
@@ -41,7 +42,7 @@ function App() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-sae-orange"></span>
             </span>
             <span className="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">
-              Seeking 2026 Co-Op
+              Summmer 2026 DelResearch Intern
             </span>
           </div>
         </div>
@@ -98,7 +99,7 @@ function App() {
           {/* LEFT COLUMN: ABOUT & EXPERIENCE (4 cols) */}
           <aside className="lg:col-span-4 p-8 md:p-12 border-r border-zinc-800/50">
             
-            <section className="mb-12">
+            <section className="">
               <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <UserIcon className="w-5 h-5 text-sae-orange" /> About Me
               </h2>
@@ -108,8 +109,10 @@ function App() {
               </p>
             </section>
 
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-slate-500 to-transparent opacity-50 mt-6 mb-6"></div>
+
             {/* EXPERIENCE */}
-            <section className="mb-12">
+            <section className="">
               <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <BriefcaseIcon className="w-5 h-5 text-sae-orange" /> Experience
               </h2>
@@ -137,8 +140,10 @@ function App() {
               </div>
             </section>
 
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-slate-500 to-transparent opacity-50 mt-6 mb-6"></div>
+
             {/* TECHNICAL SKILLS SECTION */}
-            <section className="mb-12">
+            <section className="">
               <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <RectangleStackIcon className="w-5 h-5 text-sae-orange" /> Skills
               </h2>
@@ -182,9 +187,11 @@ function App() {
                 </div>
               </div>
             </section>
+
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-slate-500 to-transparent opacity-50 mt-6 mb-6"></div>
             
             {/* LEADERSHIP EXPERIENCE */}
-            <section>
+            <section className="">
               <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-6">
                 <AcademicCapIcon className="w-5 h-5 text-sae-orange" /> Leadership
               </h2>
@@ -209,8 +216,29 @@ function App() {
                   </div>
                 </div>
               </div>
-
             </section>
+
+            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-slate-500 to-transparent opacity-50 mt-6 mb-6"></div>
+
+            <section>
+              <h2 className="text-white font-bold uppercase tracking-widest text-md flex items-center gap-2 mb-4">
+                <RocketLaunchIcon className="w-5 h-5 text-sae-orange" /> Hobbies/Interests
+              </h2>
+              <div className = "space-y-4 ">
+                <div>
+                  <ul className="grid grid-cols-2 gap-y-1 text-[12px] text-zinc-400">
+                    <li>• Hockey </li>
+                    <li>• Skiing </li>
+                    <li>• Automotive Repair </li>
+                    <li>• Personal Fitness </li>
+                    <li>• Mountain Biking </li>
+                    <li>• Projects </li>
+                    <li>• Cars </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
           </aside>
 
           <section className="lg:col-span-8 p-8 md:p-12 bg-black/20">
@@ -228,7 +256,14 @@ function App() {
                   <div 
                     key={index} 
                     className={`
-                      bg-[#121212] border border-zinc-800/50 rounded-2xl p-8 hover:border-sae-orange/50 transition-all flex flex-col
+                      bg-[#121212]/90 border border-zinc-800/50 rounded-2xl p-8 
+                      flex flex-col backdrop-blur-md
+                      shadow-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+                      
+                      transition-all duration-500 ease-out
+                      hover:shadow-[0_0_30px_rgba(255,103,0,0.2)]
+                      hover:border-sae-orange/40
+                      hover:-translate-y-1
                       ${hasImage ? 'lg:col-span-2' : 'lg:col-span-1'}
                     `}
                   >
@@ -266,7 +301,7 @@ function App() {
                       <a 
                         href={project.github} 
                         target="_blank" 
-                        className="mt-8 w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-3 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all"
+                        className="mt-8 w-full bg-sae-orange/10 border border-sae-orange/20 text-sae-orange py-3 rounded-xl text-center text-sm font-bold hover:bg-sae-orange hover:text-black transition-all shadow-[0_0_20px_rgba(255,103,0,0.09)]"
                       >
                         View Project
                       </a>

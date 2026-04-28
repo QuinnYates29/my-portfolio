@@ -20,15 +20,6 @@ export interface Project {
       github: "https://github.com/QuinnYates29/RIT-theme-Inkscape-plugin",
       image: schematicImg
     },
-    /*
-    {
-      title: "Fundraising Website",
-      description: "and aodhoa doaihdoia doihd ioahoaidh oafh ao aofihfaoi foih oa o aoih ofih oiaf hoiaf hiof oia oif oiaf oiahfoih foahfo ljakbjgb",
-      tech: ["Angular", "TypeScript", "Spring Boot", "Java", "JaCoCo", "SonarQube"],
-      github: "gitpage",
-      image: "placeholder.png"
-    },
-    */
     {
       title: "PCB Vibration Tester",
       description: "ESP32-based automation platform designed for high-stress reliability testing of component assemblies \
@@ -44,6 +35,15 @@ export interface Project {
       1,000 small vessels. Features SOS systems and state management, enabling reliable long-term operation in remote environments.",
       tech: ["Micropython", "GPS/GNSS", "State Management", "Rapid Prototyping", "System Integration"]
     },
+    /*
+    {
+      title: "Fundraising Website",
+      description: "and aodhoa doaihdoia doihd ioahoaidh oafh ao aofihfaoi foih oa o aoih ofih oiaf hoiaf hiof oia oif oiaf oiahfoih foahfo ljakbjgb",
+      tech: ["Angular", "TypeScript", "Spring Boot", "Java", "JaCoCo", "SonarQube"],
+      github: "gitpage",
+      image: "placeholder.png"
+    },
+    */
     {
       title: "Wireless Telemetry System",
       description: "Real-time data acquisition architecture developed to bridge vehicle CAN bus networks with long-range \
