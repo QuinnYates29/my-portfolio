@@ -279,8 +279,26 @@ function App() {
                             ))}
                           </div>
                         </div>
-                        <div className="aspect-video bg-[#18181b] border border-zinc-800 rounded-xl overflow-hidden shadow-inner">
-                          <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                        <div className="aspect-video bg-[#18181b] border border-zinc-800 rounded-xl overflow-hidden shadow-inner relative group/carousel">
+                          {/* Scroll Container */}
+                          <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide h-full">
+                            {project.image.map((img, i) => (
+                              <div key={i} className="flex-none w-full h-full snap-center">
+                                <img 
+                                  src={img} 
+                                  alt={`${project.title} screenshot ${i}`} 
+                                  className="w-full h-full object-cover" 
+                                />
+                              </div>
+                            ))}
+                          </div>
+
+                          {/* Visual Indicator (Dots) */}
+                          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 pointer-events-none">
+                            {project.image.map((_, i) => (
+                              <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/30 border border-black/20" />
+                            ))}
+                          </div>
                         </div>
                       </div>
                     ) : (
