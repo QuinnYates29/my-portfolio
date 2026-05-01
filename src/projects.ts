@@ -1,4 +1,9 @@
 import schematicImg from "./assets/schematic_example3.png";
+import SWENhomepageImg from "./assets/homepage.png";
+import SWENadmincupboardImg from "./assets/admin_cupboard.png";
+import SWENadminhipposImg from "./assets/admin_hippos.png";
+import SWENhelpercupImg from "./assets/helper_cupboard.png";
+import SWENhelperhipposImg from "./assets/helper_hippos.png";
 
 export interface Project {
     title: string;
@@ -6,7 +11,7 @@ export interface Project {
     tech: string[];
     link?: string;
     github?: string;
-    image?: string;
+    image?: string[];
   }
   
   export const projects: Project[] = [
@@ -18,7 +23,7 @@ export interface Project {
       manual alignment errors and ensure high-precision, uniform schematics.',
       tech: ["Python", "XML", "Inkex API", "Computational Geometry"],
       github: "https://github.com/QuinnYates29/RIT-theme-Inkscape-plugin",
-      image: schematicImg
+      image: [schematicImg]
     },
     {
       title: "PCB Vibration Tester",
@@ -35,15 +40,17 @@ export interface Project {
       1,000 small vessels. Features SOS systems and state management, enabling reliable long-term operation in remote environments.",
       tech: ["Micropython", "GPS/GNSS", "State Management", "Rapid Prototyping", "System Integration"]
     },
-    /*
     {
       title: "Fundraising Website",
-      description: "and aodhoa doaihdoia doihd ioahoaidh oafh ao aofihfaoi foih oa o aoih ofih oiaf hoiaf hiof oia oif oiaf oiahfoih foahfo ljakbjgb",
+      description: `Directed a cross-functional team in an Agile/Scrum environment to deliver a full-stack CRUD application \
+      designed to simulate global conservation funding. Spearheaded the development of a centralized administrative dashboard \
+      featuring authentication and an interactive geospatial interface for real-time asset tracking. \
+      Engineered a persistent backend architecture to manage relational data mapping for simulated users and global assets, \
+      ensuring data integrity across high-velocity development sprints.`,
       tech: ["Angular", "TypeScript", "Spring Boot", "Java", "JaCoCo", "SonarQube"],
       github: "gitpage",
-      image: "placeholder.png"
+      image: [SWENhomepageImg, SWENadmincupboardImg, SWENadminhipposImg, SWENhelpercupImg, SWENhelperhipposImg]
     },
-    */
     {
       title: "Wireless Telemetry System",
       description: "Real-time data acquisition architecture developed to bridge vehicle CAN bus networks with long-range \
