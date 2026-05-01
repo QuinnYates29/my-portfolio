@@ -54,7 +54,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                         ref={scrollRef}
                         onScroll={handleScroll}
                         className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide h-full">
-                    {project.image.map((img, i) => (
+                    {project.image?.map((img, i) => (
                         <div key={i} className="flex-none w-full h-full snap-center">
                         <img 
                             src={img} 
