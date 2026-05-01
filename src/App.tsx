@@ -51,10 +51,10 @@ function App() {
         {/* Column 3: Right (Socials) */}
         <div className="flex justify-end gap-6">
           <a href="https://github.com/QuinnYates29" target="_blank" rel="noreferrer">
-            <GithubIcon className="w-5 h-5 hover:text-white transition-colors" />
+            <GithubIcon className="w-7 h-7 hover:text-white transition-colors" />
           </a>
           <a href="https://linkedin.com/in/quinnyates" target="_blank" rel="noreferrer">
-            <LinkedinIcon className="w-5 h-5 hover:text-white transition-colors" />
+            <LinkedinIcon className="w-7 h-7 hover:text-white transition-colors" />
           </a>
         </div>
       </nav>
