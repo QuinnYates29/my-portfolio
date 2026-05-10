@@ -43,7 +43,7 @@ function App() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-sae-orange"></span>
             </span>
             <span className="text-[10px] uppercase tracking-widest text-zinc-300 font-bold">
-              Seeking Summer 2026 Co-Op
+              2026 delResearch Intern
             </span>
           </div>
         </div>
